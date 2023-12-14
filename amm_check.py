@@ -7,7 +7,7 @@ def is_app_running(app_name):
         # The pgrep command searches for processes by name.
         # If the app is running, the command will return a process ID.
         # Otherwise, it will not return anything.
-        output = os.popen(f'pgrep {app_name}').read().strip()
+        output = os.popen(f'pgrep ^{app_name}$').read().strip()
         return bool(output)
     except Exception as e:
         print(f"Error checking if {app_name} is running: {e}")
@@ -21,7 +21,7 @@ def launch_app(app_name):
         print(f"Error launching {app_name}: {e}")
 
 def main():
-    app_name = "^amm$"
+    app_name = "amm"
     log_filename = "amm_check_log.txt"
     
     while True:
