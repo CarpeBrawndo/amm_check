@@ -21,7 +21,7 @@ def launch_app(app_name):
         print(f"Error launching {app_name}: {e}")
 
 def main():
-    app_name = "amm"
+    app_name = "^amm$"
     log_filename = "amm_check_log.txt"
     
     while True:
